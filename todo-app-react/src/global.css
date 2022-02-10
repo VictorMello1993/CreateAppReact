@@ -1,0 +1,31 @@
+/* Resentando os espaçamentos definidos pelo browser  */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+html,
+body{
+
+  /* Por padrão, o conteúdo do body só consegue ocupar 100% da largura do viewport */
+  /* Com height: 100%, o conteúdo do body poderá ocupar 100% da altura do viewport */
+  height: 100%;  
+
+  margin: 0px;
+}
+
+body{
+  background-color: #1396cb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%
+}
+
+#todo{
+  background-color: #fff;
+  min-width: 500px;
+  width: 30%;
+  padding: 8px;
+  border-radius: 5px;
+}

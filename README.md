@@ -1,4 +1,4 @@
-# CreateAppReact
+# TodoListApp
 Repositório de estudos em React
 
 **Conteúdos aprendidos em aulas**

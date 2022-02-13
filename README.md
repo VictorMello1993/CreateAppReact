@@ -1,5 +1,5 @@
 # TodoListApp
-Repositório de estudos em React
+Repositório de estudos em React - Primeiro projeto: Todo list
 
 **Conteúdos aprendidos em aulas**
    * Revisão dos fundamentos de Javascript (operador spread, arrow functions, etc)

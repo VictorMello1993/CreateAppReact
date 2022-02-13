@@ -40,12 +40,33 @@
 
 .item {
   padding: 10px;
-  color: #016f88;
+  color: #fff;
   margin: 10px auto;
   border-radius: 5px;
   display: flex;
+  background-color: #016f88;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
 .item .text {
   flex: 1;
+}
+
+.tooltips{
+  display: flex; 
+}
+
+.tooltips svg:hover{
+  cursor: pointer;
+}
+
+.tooltips svg:nth-child(1){
+  margin-right: 10px;
+}
+
+.done{
+  background-color: #228B22;
+  text-decoration: line-through;
 }

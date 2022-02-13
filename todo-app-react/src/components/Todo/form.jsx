@@ -1,11 +1,12 @@
 import './todo.css'
 import { useState } from 'react'
+import {v4 as uuid} from 'uuid'
 
 const Form = ({add}) => {
   const [text, setText] = useState('');
   
-  const submitTodo = (event => {
-    add({task: text})
+  const submitTodo = (event => {    
+    add({id: uuid(), task: text, done: false})
     setText('')    
   });
 

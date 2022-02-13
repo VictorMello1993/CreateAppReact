@@ -52,6 +52,10 @@
   flex: 1;
 }
 
+.text svg {
+  margin-left: 5px;
+}
+
 .actions{
   display: flex;
 }

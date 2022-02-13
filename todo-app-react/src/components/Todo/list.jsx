@@ -3,7 +3,6 @@ import TodoItem from "./item";
 
 const Lista = ({todos, actions}) => {
   const [done, setTaskAsDone] = useState(false)
-  
   return (
     <>
       {todos.map((item, i) => (

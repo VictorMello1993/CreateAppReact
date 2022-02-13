@@ -3,6 +3,12 @@ import { useState } from 'react'
 
 const Form = ({actions}) => {
   const [text, setText] = useState('');
+
+  const addTask = () => {
+    actions.add(text)
+    setText('')
+  }
+
   return (
     <div className="insert">
       <input 
@@ -16,7 +22,7 @@ const Form = ({actions}) => {
         {/* CUIDADO! Funções void sem parâmetros sendo passadas no bind, são automaticamente executadas */}
         {/* Funções com parâmetro é preciso declarar uma função de bind, da forma () => funcao(param) */}
         {/* Motivo: React é one way data-bind */}
-        <button disabled={!text} onClick={() => actions.add(text)}>
+        <button disabled={!text} onClick={addTask}>
           ADD
         </button>
     </div>

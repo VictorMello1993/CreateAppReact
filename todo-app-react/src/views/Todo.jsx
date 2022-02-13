@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import Header from '../components/Header/index'
 import FormTodo from '../components/Todo/form'
-import Lista from '../components/Todo/list'
 import {v4 as uuid} from 'uuid'
+import Lista from '../components/Todo/list.jsx'
 
 const Todo = () => {
   const [showForm, setShowForm] = useState(false)
@@ -30,7 +30,13 @@ const Todo = () => {
       setTodo([...todos])
     },
 
-    update: () => console.log('update')
+    update: (id) => {
+      const task = todos.find(item => item.id === id)
+      
+      task.status = !task.status;
+
+      setTodo([...todos])
+    }
   }
 
   return (

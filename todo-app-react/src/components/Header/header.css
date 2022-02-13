@@ -20,19 +20,26 @@
   border-radius: 2px;
   line-height: 2.5px;
   align-self: flex-end;    
-  cursor: pointer;
-  font-size: 30px;
+  cursor: pointer;  
 }
 
-/* .header .add:svg{
+/*
+.header .add svg {
   color: #005073;
   font-size: 30px;
 }
-
-.header .add svg:active{
-  color:#02151d;
+.header .add svg:active {
+ color: #35393a;
 }
-
-.header .closeAdd{
-
+.header .closeAdd {
+  border-radius: 2px;
+  line-height: 2.5px;
+  align-self: flex-end;
+  background-color: #e57373;
+  padding: 5px 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.header .closeAdd:active {
+  background-color: #d81b60;
 } */

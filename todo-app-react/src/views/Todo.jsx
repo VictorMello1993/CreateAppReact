@@ -1,19 +1,43 @@
 import { useState } from 'react'
 import Header from '../components/Header/index'
 import FormTodo from '../components/Todo/form'
-import TodoItem from '../components/Todo/item'
+import Lista from '../components/Todo/list'
+import {v4 as uuid} from 'uuid'
 
 const Todo = () => {
   const [showForm, setShowForm] = useState(false)
-  const [todo, setTodo] = useState([]);
+  const [todos, setTodo] = useState([]);
 
-  const AddTask = (task) => setTodo([...todo, task])
+  const toogleForm = () => setShowForm(!showForm);
+
+  const formatTask = (text) => ({
+    id: uuid(),
+    text,
+    status: false
+  })
+
+  /*Declarando funções de composição (funções dentro de um objeto ou dentro de uma função) 
+  para representar as ações do formulário (adicionar, remover e atualizar)*/
+  const actions = {
+    add: (text) => setTodo([...todos, formatTask(text)]),
+
+    remove: (id) => {
+      const task = todos.find(item => item.id === id)
+      const index = todos.indexOf(task);
+      
+      todos.splice(index, 1)
+
+      setTodo([...todos])
+    },
+
+    update: () => console.log('update')
+  }
 
   return (
     <div id="todo">
-      <Header handle={setShowForm} value={showForm} />
-      {showForm ? <FormTodo add={AddTask} /> : null}
-      {todo.map((item, index) => <TodoItem key={index} text={item.task} item={item} />)}
+      <Header toogle={toogleForm} show={showForm}/>
+      {showForm ? <FormTodo actions={actions} /> : null}            
+      <Lista todos={todos} actions={actions}/>
     </div>
   )
 }

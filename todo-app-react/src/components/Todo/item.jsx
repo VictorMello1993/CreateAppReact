@@ -1,11 +1,10 @@
 import './todo.css'
 
-const TodoItem = ({text}) => {  
+const TodoItem = ({text, remove}) => {  
   return (
     <div className="item">
       <div className="text">{text}</div>
-      <div className="tooltips">        
-      </div>
+      <button className="action" onClick={remove}>delete</button>
     </div>
   )
 }

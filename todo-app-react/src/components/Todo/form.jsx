@@ -1,14 +1,8 @@
 import './todo.css'
 import { useState } from 'react'
 
-const Form = ({add}) => {
+const Form = ({actions}) => {
   const [text, setText] = useState('');
-
-  const submitTodo = (event) => {
-     add({task: text});
-     setText('');
-  };
-
   return (
     <div className="insert">
       <input 
@@ -18,7 +12,11 @@ const Form = ({add}) => {
         value={text}
         onChange={(event) => setText(event.target.value)}
         />
-        <button disabled={!text} onClick={submitTodo}>
+
+        {/* CUIDADO! Funções void sem parâmetros sendo passadas no bind, são automaticamente executadas */}
+        {/* Funções com parâmetro é preciso declarar uma função de bind, da forma () => funcao(param) */}
+        {/* Motivo: React é one way data-bind */}
+        <button disabled={!text} onClick={() => actions.add(text)}>
           ADD
         </button>
     </div>

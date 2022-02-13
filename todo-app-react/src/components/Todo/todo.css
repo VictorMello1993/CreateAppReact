@@ -40,14 +40,10 @@
 
 .item {
   padding: 10px;
-  color: #fff;
+  color: #016f88;
   margin: 10px auto;
   border-radius: 5px;
   display: flex;
-  background-color: #016f88;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
 }
 
 .item .text {

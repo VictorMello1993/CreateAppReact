@@ -9,8 +9,9 @@ const TodoItem = ({text, item, removeItem, mark}) => {
   const toggleDone = () => {
     mark(item)
 
-    const todoItem = document.querySelector(`div[id=${item.id}]`)    
-
+    const todoItem = Array.from(document.querySelectorAll('.item'))
+                          .find(el => el.getAttribute('id') === item.id)
+    
     if(item.done){
       todoItem.classList.add('done')
     }

@@ -35,6 +35,13 @@ const Todo = () => {
       
       task.status = !task.status;
 
+      todos.sort((task1, task2) => {
+        if(task1.status > task2.status){
+          return 1
+        }
+          return -1
+      })
+
       setTodo([...todos])
     }
   }
